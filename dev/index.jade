@@ -7,79 +7,80 @@ head
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,300,200' rel='stylesheet' type='text/css'>
 body
 
-	h1.intro Book Your Room
+	.done
+		h1.intro Book Your Room
 
-	.appear
-		.large
-			img.big(src="", alt="")
-			img.close(src="images/close.png", alt="")
+		.appear
+			.large
+				img.big(src="", alt="")
+				img.close(src="images/close.png", alt="")
 
-	img.addOn.people.JB(src="images/JB.png", alt="")
-	img.addOn.people.drake(src="images/drake.png")
-	img.addOn.people.RF(src="images/robford.png", alt="")
-	img.addOn.people.nicki(src="images/nicki.png", alt="")
-	img.addOn.people.queen(src="images/queen.png", alt="")
-	img.addOn.people.kim(src="images/kim.png", alt="")
+		img.addOn.people.JB(src="images/JB.png", alt="")
+		img.addOn.people.drake(src="images/drake.png")
+		img.addOn.people.RF(src="images/robford.png", alt="")
+		img.addOn.people.nicki(src="images/nicki.png", alt="")
+		img.addOn.people.queen(src="images/queen.png", alt="")
+		img.addOn.people.kim(src="images/kim.png", alt="")
 
-	img.addOn.food.sushi(src="images/sushi.png", alt="")
-	img.addOn.food.nachos(src="images/nachos.png", alt="")
-	img.addOn.food.burger(src="images/burger.png", alt="")
-	img.addOn.food.salad(src="images/salad.png", alt="")
+		img.addOn.food.sushi(src="images/sushi.png", alt="")
+		img.addOn.food.nachos(src="images/nachos.png", alt="")
+		img.addOn.food.burger(src="images/burger.png", alt="")
+		img.addOn.food.salad(src="images/salad.png", alt="")
 
-	img.addOn.drink.champagne(src="images/champagne.png", alt="")
-	img.addOn.drink.beer(src="images/beer.png", alt="")
-	img.addOn.drink.vodka(src="images/vodka.png")
-	img.addOn.drink.tequila(src="images/tequila.png", alt="")
-	img.addOn.drink.wine(src="images/wine.png", alt="")
+		img.addOn.drink.champagne(src="images/champagne.png", alt="")
+		img.addOn.drink.beer(src="images/beer.png", alt="")
+		img.addOn.drink.vodka(src="images/vodka.png")
+		img.addOn.drink.tequila(src="images/tequila.png", alt="")
+		img.addOn.drink.wine(src="images/wine.png", alt="")
 
-	.price
-		h2 Total Price
-		p.total $1,000.00
+		.price
+			h2 Total Price
+			p.total $1,000.00
 
-	.menu
-		h1 Shaw
-		h2 Extras:
-		ul.mainMenu
-			li.alcohol Alcohol
-				ul.alcohol
-					li.champagneli Champagne
-					li.wineli Wine
-					li.vodkali Vodka
-					li.tequilali Tequila
-					li.beerli Beer
-			li.food Food
-				ul.food
-					li.sushili Sushi
-					li.burgerli Burger
-					li.saladli Salad
-					li.nachosli Nachos
-			li.women Women
-				ul.women
-					li.kimli Kim Kardashian
-					li.queenli Queen Elizabeth
-					li.nickili Nicki Minaj
-			li.men Men
-				ul.men
-					li.JBli Justin Bieber
-					li.RFli Rob Ford
-					li.drakeli Drake
+		.menu
+			h1 Shaw
+			h2 Extras:
+			ul.mainMenu
+				li.alcohol Alcohol
+					ul.alcohol
+						li.champagneli Champagne
+						li.wineli Wine
+						li.vodkali Vodka
+						li.tequilali Tequila
+						li.beerli Beer
+				li.food Food
+					ul.food
+						li.sushili Sushi
+						li.burgerli Burger
+						li.saladli Salad
+						li.nachosli Nachos
+				li.women Women
+					ul.women
+						li.kimli Kim Kardashian
+						li.queenli Queen Elizabeth
+						li.nickili Nicki Minaj
+				li.men Men
+					ul.men
+						li.JBli Justin Bieber
+						li.RFli Rob Ford
+						li.drakeli Drake
 
 
-	
-	.wrapper
-		.side
-				img.sidePic(src="images/room1.jpg", alt="")
-
-				img.sidePic(src="images/room2.jpg", alt="")
-
-				img.sidePic(src="images/room3.jpg", alt="")
-
-				img.sidePic(src="images/room4.jpg", alt="")
-
-				img.sidePic(src="images/room5.jpg", alt="")
 		
-			.main
-				img.small(src="images/room1.jpg", alt="")
+		.wrapper
+			.side
+					img.sidePic(src="images/room1.jpg", alt="")
+
+					img.sidePic(src="images/room2.jpg", alt="")
+
+					img.sidePic(src="images/room3.jpg", alt="")
+
+					img.sidePic(src="images/room4.jpg", alt="")
+
+					img.sidePic(src="images/room5.jpg", alt="")
+			
+				.main
+					img.small(src="images/room1.jpg", alt="")
 				//- .magnify
 
 
@@ -92,12 +93,16 @@ script.
 
 	$(document).ready(function(){
 
+		$('body').hide().fadeIn(300);
+
 		var total = 1000;
 
 		var update = function(price) {
 			price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			$('.total').text('$' + price + '.00');
 		}
+
+		var z = 9000;
 
 		var room1 = 1000;
 		var room2 = 800;
@@ -128,6 +133,11 @@ script.
 		var people = 0;
 
 		$('.addOn').draggable({ containment: ".main" });
+
+		$('.addOn').on('drag', function(){
+				z++;
+				$(this).css('z-index', z);
+			});
 
 		$('img.sidePic').on('click', function(){
 
@@ -429,7 +439,6 @@ script.
 					});
 
 		});
-
 
 
 	//- $(document).ready(function(){
