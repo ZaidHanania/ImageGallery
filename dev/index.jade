@@ -2,7 +2,7 @@
 html(lang="en")
 head
 	meta(charset="UTF-8")
-	title Image Gallery
+	title Hotel #YOLO
 	link(rel="stylesheet", href="main.css")
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,300,200' rel='stylesheet' type='text/css'>
 body
@@ -35,10 +35,10 @@ body
 
 		.price
 			h2 Total Price
-			p.total $1,000.00
+			p.total $4,000.00
 
 		.menu
-			h1 Shaw
+			h1 #YOLO
 			h2 Extras:
 			ul.mainMenu
 				li.alcohol Alcohol
@@ -95,7 +95,7 @@ script.
 
 		$('body').hide().fadeIn(300);
 
-		var total = 1000;
+		var total = 4000;
 
 		var update = function(price) {
 			price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -104,10 +104,10 @@ script.
 
 		var z = 9000;
 
-		var room1 = 1000;
-		var room2 = 800;
-		var room3 = 20;
-		var room4 = 300;
+		var room1 = 4000;
+		var room2 = 1800;
+		var room3 = 7300;
+		var room4 = 300000;
 		var room5 = 1200;
 
 		var kim = 200000;
@@ -213,7 +213,8 @@ script.
 						people++;
 						total += justin;
 						update(total);
-						$('.JB').fadeIn();
+						z++;
+						$('.JB').css('z-index', z).fadeIn();
 					}
 					});
 
@@ -223,7 +224,8 @@ script.
 						people++;
 						total += drake;
 						update(total);
-						$('.drake').fadeIn();
+						z++;
+						$('.drake').css('z-index', z).fadeIn();
 					}
 					});
 
@@ -233,7 +235,8 @@ script.
 						people++;
 						total += rob;
 						update(total);
-						$('.RF').fadeIn();
+						z++;
+						$('.RF').css('z-index', z).fadeIn();
 					}
 					});
 
@@ -243,7 +246,8 @@ script.
 						people++;
 						total += nicki;
 						update(total);
-						$('.nicki').fadeIn();
+						z++;
+						$('.nicki').css('z-index', z).fadeIn();
 					}
 					});
 
@@ -253,7 +257,8 @@ script.
 						people++;
 						total += queen;
 						update(total);
-						$('.queen').fadeIn();
+						z++;
+						$('.queen').css('z-index', z).fadeIn();
 					}
 					});
 
@@ -263,7 +268,8 @@ script.
 						people++;
 						total += kim;
 						update(total);
-						$('.kim').fadeIn();
+						z++;
+						$('.kim').css('z-index', z).fadeIn();
 					}
 				});
 
@@ -271,7 +277,8 @@ script.
 					if(food > 1) return;
 					if( $('.sushi').css('display')=== 'none') {
 						food++;
-						$('.sushi').fadeIn();
+						z++;
+						$('.sushi').css('z-index', z).fadeIn();
 						total += sushi;
 						update(total);
 					}
@@ -281,8 +288,9 @@ script.
 					if(food > 1) return;
 					if( $('.nachos').css('display')=== 'none') {
 						food++;
+						z++;
 						total += nachos;
-						$('.nachos').fadeIn();
+						$('.nachos').css('z-index', z).fadeIn();
 						update(total);
 					}
 					});
@@ -293,7 +301,8 @@ script.
 						total += burger;
 						food ++;
 						update(total);
-						$('.burger').fadeIn();
+						z++;
+						$('.burger').css('z-index', z).fadeIn();
 					}
 					});
 
@@ -304,7 +313,8 @@ script.
 						food ++;
 						total += salad;
 						update(total);
-						$('.salad').fadeIn();
+						z++
+						$('.salad').css('z-index', z).fadeIn();
 					}
 					});
 
@@ -314,7 +324,8 @@ script.
 						drinks ++;
 						total += wine;
 						update(total);
-						$('.wine').fadeIn();
+						z++;
+						$('.wine').css('z-index', z).fadeIn();
 					}
 					});
 
@@ -324,7 +335,8 @@ script.
 						drinks ++;
 						total += vodka;
 						update(total);
-						$('.vodka').fadeIn();
+						z++;
+						$('.vodka').css('z-index', z).fadeIn();
 					}
 					});
 
@@ -334,7 +346,8 @@ script.
 						drinks++;
 						total += champagne;
 						update(total);
-						$('.champagne').fadeIn();
+						z++;
+						$('.champagne').css('z-index', z).fadeIn();
 					}
 					});
 
@@ -344,7 +357,8 @@ script.
 						drinks++;
 						total += beer;
 						update(total);
-						$('.beer').fadeIn();
+						z++;
+						$('.beer').css('z-index', z).fadeIn();
 					}
 					});
 
@@ -354,7 +368,8 @@ script.
 						total += tequila;
 						drinks++;
 						update(total);
-						$('.tequila').fadeIn();
+						z++;
+						$('.tequila').css('z-index', z).fadeIn();
 					}
 					});
 
